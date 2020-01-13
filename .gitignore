@@ -1,0 +1,6 @@
+/.vscode/
+/backend/credit_calc/__pycache__/
+/backend/credit_product/__pycache__/
+/backend/users/__pycache__/
+/envcredit/
+/frontend/node_modules/
