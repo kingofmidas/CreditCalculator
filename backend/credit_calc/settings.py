@@ -168,7 +168,7 @@ SIMPLE_JWT = {
 }
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'honenkoi@gmail.com'
+EMAIL_HOST_USER = 'yourmail@gmail.com'
 EMAIL_HOST_PASSWORD = 'xseaglkyvqenybim'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
