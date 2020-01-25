@@ -83,25 +83,24 @@ export default {
 
         var payment_numerator = (this.rate/12)*(Math.pow(1+(this.rate/12), this.time));
         var payment_denominator = Math.pow(1+(this.rate/12), this.time) - 1;
-        this.payment = +((this.sum[0]*(payment_numerator/payment_denominator)).toFixed(2));
+        this.payment = +((this.sum[0]*payment_numerator/payment_denominator).toFixed(2));
 
         this.percents = [];
         this.body = [];
         this.percents_plus_body = [];
 
         for(let i = 0; i < this.time; i++){
-
-            this.percents.push(+(Math.round(100*this.sum[i]*this.rate/12)/100).toFixed(2));
-            this.body.push(+(Math.round(100*(this.payment - this.percents[i]))/100).toFixed(2));
-            this.percents_plus_body.push(+(Math.round(100*(this.percents[i] + this.body[i]))/100).toFixed(2));
+            this.percents.push(+((this.sum[i]*this.rate/12).toFixed(2)));
+            this.body.push(+((this.payment - this.percents[i]).toFixed(2)));
+            this.percents_plus_body.push(+((this.percents[i] + this.body[i]).toFixed(2)));
             
             if(i == (this.time - 1)){
                 this.body[i] = this.sum[i]
-                this.percents_plus_body[i] = (+(Math.round(100*(this.percents[i] + this.body[i]))/100).toFixed(2))
+                this.percents_plus_body[i] = (+((this.percents[i] + this.body[i]).toFixed(2)));
                 this.sum.push(+Math.round(this.sum[i] - this.body[i]));
             }
             else{
-                this.sum.push(+(Math.round(100*(this.sum[i] - this.body[i]))/100).toFixed(2));
+                this.sum.push(+((this.sum[i] - this.body[i]).toFixed(2)));
             }
         }
       }

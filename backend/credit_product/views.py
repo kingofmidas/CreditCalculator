@@ -35,8 +35,6 @@ class FilterProductView(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
 
-        print("REQUEST", self.request)
-
         credit_sum = self.request.query_params.get('credit_sum')
         credit_time = self.request.query_params.get('credit_time')
         early_repayment = self.request.query_params.get('early_repayment')

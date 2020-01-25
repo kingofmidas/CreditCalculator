@@ -7,8 +7,6 @@ import router from "./router";
 import store from "./store";
 import axios from 'axios';
 
-// require('@/store/subscriber');
-
 Vue.config.productionTip = false;
 
 
